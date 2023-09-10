@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.header {
+    background-color: transparent;
+    position:fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.header.white {
+    background-color: rgb(255, 255, 255);
+}
+
+.header-left {
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.content {
+    padding: 50px;
+    text-align: center;
+}
+
+#google-map {
+    height: 300px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.content h2 {
+    margin-bottom: 20px;
+}
