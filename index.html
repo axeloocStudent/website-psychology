@@ -300,6 +300,9 @@ section p, ul {
     gap:50px;
 }
 
+#mycroix{
+    display:none;
+}
 
 
 
@@ -316,6 +319,12 @@ section p, ul {
     }
     .icon{
         display: block;
+        position:absolute;
+        right:85px;
+    }
+    .icon.responsive{
+        display:none;
+        
     }
     .lnavbar.responsive{
         display:flex;
@@ -362,7 +371,17 @@ section p, ul {
     .navbar a {
         color:black;
     }
-
+     #mycroix.responsive{
+        position: absolute;
+        display: block;
+    top: 25px; /* Écart par rapport au bord supérieur */
+    right: 25px; /* Écart par rapport au bord droit */
+    transform: scale(2); /* Échelle de l'élément */
+    color: black;
+    /* align-self: baseline; (non utilisé car il s'agit d'une propriété de flexbox) */
+    /* padding: 5px 20px; (non utilisé car il s'agit de marges et de rembourrage) */
+    margin-bottom: 10px;
+     }
     
 
 
@@ -419,6 +438,13 @@ section p, ul {
     transition: background-color 0.3s ease;
     z-index: 1000;
     color:rgb(20, 111, 163);
+}
+
+.header.responsive{
+    padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .computer{
     display:none;
@@ -514,9 +540,10 @@ margin-right: 0px;
     </style>
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="myheader">
         <div class="header-left" id="leftAli">Alicia Ducatillon - Psychologue <div class="computer">clinicienne</div></div>
-        <div class="icon"  onclick="FunctNav()">&#9776;</div>
+        <div class="icon" id="myicon" onclick="FunctNav()">&#9776;</div>
+        <div class="croix" id="mycroix" onclick="FunctNav()">&#10006;</div>
         <nav class="navbar" >
             <ul class="lnavbar" id="myTopnavPhone">
                 <li><a href="#cabinet">Le cabinet</a></li>
@@ -695,8 +722,14 @@ navItems.forEach(function(item) {
         const targetClass = event.target.getAttribute('data-target'); // Obtenez la classe cible
         const h1 = document.getElementById('leftAli'); // Récupérez l'élément du header
         const h2=document.getElementById('myTopnavPhone');
+        const h3=document.getElementById('myicon');
+        const h4=document.getElementById('mycroix');
+        const h5=document.getElementById('myheader');
         h1.className = 'header-left'; // Réinitialisez la classe du header
         h2.className='lnavbar';
+        h3.className='icon';
+        h4.className='croix';
+        h5.className='header';
     });
 });
 
@@ -705,12 +738,21 @@ navItems.forEach(function(item) {
     function FunctNav() {
                 var x = document.getElementById("myTopnavPhone");
                 var left=document.getElementById("leftAli");
+                var icon=document.getElementById("myicon");
+                var croix = document.getElementById("mycroix");
+                var header=document.getElementById("myheader");
                 if (x.className === "lnavbar" ) {
                 left.className+=" responsive";
                 x.className += " responsive";
+                icon.className+=" responsive";
+                croix.className+=" responsive";
+                header.className+=" responsive";
                 } else {
                 x.className = "lnavbar";
                 left.className="header-left";
+                icon.className="icon";
+                croix.className="croix";
+                header.className="header";
                 }
             }
     document.addEventListener("DOMContentLoaded", function() {
