@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Psychologue clinicienne en cabinet libéral à Cluses(74).Enfants, Adolescents et Adultes. Je vous accueille le Jeudi et le Vendredi. Prise de rendez-vous par téléphone.">
+    <meta name="description" content="Psychologue clinicienne en cabinet libéral à Cluses(74).Enfants, Adolescents et Adultes. Je vous accueille le Vendredi uniquement. Prise de rendez-vous par téléphone.">
     <link rel="icon" href="./images/logoicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="js/script.js" defer></script>
+    <script src="js/carrousel.js" defer></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9R20T60X6W"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -87,6 +88,9 @@
     margin-bottom: 20px;
 }
 footer {
+            display:flex;
+            align-items: center;
+            flex-direction: column;
             background-color: #333;
             color: #fff;
             padding: 0.8rem;
@@ -201,7 +205,7 @@ position:relative;
 
 
 
-.galerie-container {
+/* .galerie-container {
     display:flex;
     flex-direction:row;
     justify-content:space-between;
@@ -222,7 +226,7 @@ position:relative;
     border-radius:10px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     transition: all 0.3s ease;
-}
+} */
 
 #cabinet ,#seances,#quisuisje,#contact,#honoraire ,#mapratique{
     text-align: justify;
@@ -310,6 +314,9 @@ section p, ul {
 
 
 @media (max-width: 680px) {
+    .social-links:hover {
+    background-color: #1975c6; /* Couleur de fond au survol */
+}
     .navbar ul{
         display:none;}
     
@@ -377,8 +384,8 @@ section p, ul {
      #mycroix.responsive{
         position: absolute;
         display: block;
-    top: 25px; /* Écart par rapport au bord supérieur */
-    right: 25px; /* Écart par rapport au bord droit */
+    top: 35px; /* Écart par rapport au bord supérieur */
+    right: 45px; /* Écart par rapport au bord droit */
     transform: scale(2); /* Échelle de l'élément */
     color: black;
     /* align-self: baseline; (non utilisé car il s'agit d'une propriété de flexbox) */
@@ -510,8 +517,209 @@ margin-right: 0px;
     scale:1.5;
     
 }
+
+
+
+
 }
-@media screen and (min-width: 681px) and (max-width: 1000px) {
+
+    .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 64rem;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 500ms ease-in-out;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 100%; /* Position initiale hors de l'écran à droite */
+            width: 100%;
+            height: 100%;
+            transition: transform 2s ease, left 2s ease;
+            background-color: #f3f4f6;
+            visibility: hidden;
+        }
+            .carousel-slide.activeLeft {
+        left: 0; /* Position de la diapositive active */
+        transform: translateX(0); /* Remettre à sa position initiale */
+        visibility: visible;
+    }
+    .carousel-slide.activeRight {
+        left: 0; /* Position de la diapositive active */
+        transform: translateX(0); /* Remettre à sa position initiale */
+        visibility: visible;
+    }
+
+    .carousel-slide.previousRight {
+        left: -100%; /* Position de la diapositive précédente hors de l'écran à gauche */
+        transform: translateX(0); /* Remettre à sa position initiale */
+        visibility: visible;
+    }
+    .carousel-slide.previousLeft{
+        left: -100%; /* Position de la diapositive précédente hors de l'écran à gauche */
+        transform: translateX(0); /* Remettre à sa position initiale */
+        visibility: visible;
+    }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height:2vh;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            padding: 1rem;
+            backdrop-filter: blur(4px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 2s ease, transform 2s ease; /* Transition pour l'effet de survol */
+        opacity: 1; /* Initialement caché */
+        /* Initialement déplacé vers le bas */
+        }
+    .carousel-slide:hover .slide-caption,
+    .carousel-slide.active .slide-caption {
+    opacity: 1; /* Afficher la légende */
+    /* Remettre à sa position initiale */
+}
+        @media (max-width: 680px) {
+    .slide-caption {
+        height: 0.6vh; /* Hauteur pour les écrans de moins de 680px */
+    }
+    
+}
+        .caption-text {
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        @media (max-width: 680px) {
+    .slide-caption {
+        font-size: 0.7rem; /* Hauteur pour les écrans de moins de 680px */
+    }
+}
+
+        .nav-button {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            z-index: 10;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+        }
+        .nav-button:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-button-prev {
+            left: 0;
+        }
+
+        .nav-button-next {
+            right: 0;
+        }
+
+        .indicators {
+            position: absolute;
+            bottom: 4rem;
+            left: 0;
+            margin-bottom:-28px;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        @media (max-width: 680px) {
+            .indicators {
+        margin-bottom: -35px;
+        }
+    }
+
+        .indicator {
+            height: 0.375rem;
+            width: 0.375rem;
+            border-radius: 9999px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 0;
+            transition: all 500ms;
+            cursor: pointer;
+        }
+ 
+        .indicator.active {
+            width: 1.5rem;
+            background-color: white;
+        }
+ 
+        .indicator:hover:not(.active) {
+            width: 1.5rem;
+            background-color: white;
+        }
+
+        .aspect-16-9 {
+            aspect-ratio: 16/9;
+        }
+        .social-links {
+    /* display: flex;
+    justify-content: center; 
+    align-items: center;  */
+    padding: 1rem;
+    width: 35%; /* Ajuster la largeur automatiquement */
+    height: 50px; /* Hauteur fixe pour le bouton */
+    background-color: rgb(20, 111, 163); /* Couleur de fond (LinkedIn blue) */
+    border-radius: 23px; /* Arrondir les coins pour créer un ovale */
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Supprimer la décoration de texte */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition pour l'effet de survol */
+}
+.content-social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+@media (min-width: 680px) {
+.social-links:hover {
+    background-color: #1e4f6b; /* Couleur de fond au survol */
+    transform: scale(1.05); /* Agrandir légèrement au survol */
+}
+}
+
+.linkedin-logo {
+    /* width: 40px; 
+    height: 40px; 
+    margin: 0 10px;  */
+    transition: transform 0.3s ease;
+}
+
+/* .linkedin-logo:hover {
+    transform: scale(1.1);
+} */
+#linkedin{
+    color:white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+    @media screen and (min-width: 681px) and (max-width: 1000px) {
     #text-animation{
     width:1400px;
     }
@@ -532,6 +740,8 @@ margin-right: 0px;
     }
 
 }
+
+
 
 
 
@@ -597,12 +807,24 @@ margin-right: 0px;
                 rythme.</p>
         </div>
         <div id="google-map"></div>
-        <div class="galerie-container">
+        <!-- <div class="galerie-container">
             <img src="images/IMG_1668.jpg" alt="Image 1">
             <img src="images/IMG_1669.jpg" alt="Image 3">
             <img src="images/IMG_1670.jpg" alt="Image 2">
             
+        </div> -->
+
+        <div id="carousel" class="carousel-container">
+            <div class="aspect-16-9">
+                <div class="carousel-track"></div>
+                <button class="nav-button nav-button-prev" aria-label="Image précédente"></button>
+                <button class="nav-button nav-button-next" aria-label="Image suivante"></button>
+                <div class="indicators"></div>
+            </div>
         </div>
+        
+
+
     </section>
 
     <section id="seances" class="content">
@@ -610,12 +832,11 @@ margin-right: 0px;
         <p>Les séances se présentent comme des instants privilégiés d'écoute et de dialogue, se déroulant
             sans rythme imposé. Elles offrent l'opportunité d'approfondir sa connaissance de soi-même et de
             prendre du recul par rapport à son vécu, dans le but de dégager des solutions optimales. 
-            <br>En ce qui concerne les consultations, elles peuvent avoir lieu en présentiel ou en visioconférence aux créneaux suivant :</p>
+            <br>En ce qui concerne les consultations, elles peuvent avoir lieu en présentiel ou en visioconférence au créneau suivant :</p>
             <ul>
-                <li>Jeudi : 9h00 à 17h00 </li>
-                <li>Vendredi : 9h00 à 17h00 (1 vendredi sur trois de 11h00 à 21h00)</li>
+                <li>Vendredi : 10h00 à 19h00 </li>
             </ul>
-            <p>La durée d'une séance est d'environ 45 minutes.</p>
+            <p>La durée d'une séance est de 45 à 60 minutes.</p>
     </section>
 
 
@@ -824,9 +1045,15 @@ vara.ready(function(){
 
     
 
-    <footer>
-        <p>Secteur d'intervention <i class="fas fa-map-marker-alt"></i> Cluses | Thyez | Scionzier | Marnaz | Marignier | Nancy-sur-Cluses | Magland | Châtillon-sur-Cluses</p>
-        <p>Tous droits réservés &copy; 2023 Alicia Ducatillon - Psychologue </p>
-    </footer>
+<footer>
+    <a href="https://www.linkedin.com/in/alicia-ducatillon-5115631b5/" target="_blank" class="social-links">
+        <div class="content-social">
+            <img src="images/linkedin.png" alt="LinkedIn Logo" class="linkedin-logo">
+            <span id="linkedin"> Alicia Ducatillon</span>
+        </div>
+    </a>
+    <p>Secteur d'intervention <i class="fas fa-map-marker-alt"></i> Cluses | Thyez | Scionzier | Marnaz | Marignier | Nancy-sur-Cluses | Magland | Châtillon-sur-Cluses</p>
+    <p>Tous droits réservés &copy; 2023 Alicia Ducatillon - Psychologue </p>
+</footer>
 </body>
 </html>
