@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Psychologue clinicienne en cabinet libéral à Cluses(74).Enfants, Adolescents et Adultes. Je vous accueille le Vendredi uniquement. Prise de rendez-vous par téléphone.">
+    <meta name="description" content="Psychologue clinicienne en cabinet libéral à Sin-Le-Noble (59).Enfants, Adolescents et Adultes. Je vous accueille le Vendredi uniquement. Prise de rendez-vous par téléphone.">
     <link rel="icon" href="./images/logoicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="js/script.js" defer></script>
@@ -16,7 +16,7 @@
     
       gtag('config', 'G-9R20T60X6W');
     </script>
-    <title>Alicia Ducatillon - Psychologue Cluses (74300)</title>
+    <title>Psychologue Sin-Le-Noble 59450 | Alicia Ducatillon</title>
     <style>
         body {
     margin: 0;
@@ -42,6 +42,7 @@
 .header.white {
     background-color: rgb(255, 255, 255);
     color:black;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5); /* Added shadow */
 }
 
 .navbar.white a{
@@ -96,6 +97,7 @@ footer {
             padding: 0.8rem;
             text-align: center;
             margin:0;
+            position: relative; /* Added for absolute positioning of children */
         }
 
         #scrollToTopButton {
@@ -114,7 +116,7 @@ flex-direction: column;
 border-radius: 50%;
           /* Utilisation de clip-path pour rogner l'image en cercle */
   clip-path: circle(50% at 50% 50%);
-
+z-index: 2000; 
 }
 .scroll-to-top-button i {
     display: block;
@@ -171,10 +173,23 @@ position:relative;
     color: black;
     padding: 5px 10px;
     text-decoration: none;
-    border-radius: 0px;
+    border-radius: 5px; /* Added rounded borders */
     font-weight: bold;
     border:2px solid white;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    animation: pulse 2s infinite; /* Added pulsing animation */
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
 }
 
 .headerText a:hover {
@@ -232,6 +247,117 @@ position:relative;
     text-align: justify;
 
 }
+
+/* Styles for the new Gruson cabinet section */
+
+
+#cabinet h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    font-size: 1.8em;
+}
+
+/* Reusing .cabinet-squares-container for layout, or create a new one if different layout needed */
+/* Styles for .cabinet-square are already defined and will be reused for animation and basic structure */
+/* We might need to adjust specific styles if the blue is different or other properties */
+
+.gruson-square { /* Specific class if we need to override .cabinet-square for Gruson */
+    background-color: rgb(20, 111, 163); /* Blue background for Gruson squares - adjust as needed */
+    /* Inherits padding, border-radius, flex, max-width, text-align, box-shadow, opacity, transform, transition from .cabinet-square */
+    /* Add any specific overrides here if needed */
+}
+
+.gruson-square h4 {
+    color: white; /* Ensure title is visible on blue background */
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Ensure .cabinet-squares-container centers its items if it's not full width */
+.cabinet-squares-container {
+    display: flex;
+    color:white;
+    justify-content: center; /* Changed to center for Gruson section if squares don't fill width */
+    align-items: stretch; 
+    gap: 20px;
+    flex-wrap: wrap; 
+    margin-bottom: 40px;
+    margin-left: auto; /* Added for centering the container itself */
+    margin-right: auto; /* Added for centering the container itself */
+    max-width: 1200px; /* Optional: constrain the width of the squares container */
+}
+
+/* Make cabinet-square elements true squares */
+.cabinet-square {
+    background-color: rgb(20, 111, 163); /* Darker blue */
+    padding: 25px;
+    border-radius: 8px;
+    flex: 1 1 300px; /* Base flex sizing */
+    max-width: 300px; /* Fixed max-width */
+    min-width: 300px; /* Fixed min-width to maintain square aspect at larger screens */
+    height: 300px; /* Fixed height to match width - creating a square */
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    opacity :1;
+    transform: none;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    
+    /* Added for content placement */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto; /* In case content overflows */
+}
+
+.cabinet-square.gruson-square a {
+    text-decoration: none;
+    color: #ffffff;
+}
+/* Animation pour l'apparition des gruson-square */
+@keyframes gruson-pop-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.92) translateY(40px);
+        box-shadow: none;
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.04) translateY(0);
+        box-shadow: 0 8px 24px 0 rgba(240,189,59,0.10);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.0) translateY(0);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+}
+.gruson-square {
+    /* ...existing code... */
+    /* Ajout pour animation */
+    will-change: transform, opacity;
+}
+.gruson-square.animated {
+    animation: gruson-pop-in 1.7s cubic-bezier(.23,1.01,.32,1) 1;
+}
+
+/* Media query for responsive behavior */
+@media (max-width: 768px) {
+    .cabinet-square {
+        min-width: unset; /* Remove min-width constraint */
+        max-width: 85%; /* Allow squares to be wider */
+        width: 85%; /* Set a percentage width */
+        height: auto; /* Let height adjust based on content */
+        min-height: 200px; /* Ensure a minimum height */
+        /* Will become rectangles rather than squares on smaller screens */
+    }
+    #cabinet h2 {
+        font-size: 1.4em; /* Adjust title size for smaller screens */
+    }
+}
+
 #univ{
 margin-left: 25px;
 margin-bottom: 20px;
@@ -372,11 +498,12 @@ section p, ul {
         color: black;
         padding: 9px 10px;
         text-decoration: none;
-        border-radius: 0px;
+        border-radius: 5px; /* Ensured rounded borders for mobile */
         font-weight: bold;
         border:2px solid white;
         transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         font-size: 14px;
+        /* animation: pulse 2s infinite; Already inherited from the general rule, no need to repeat unless specific mobile override */
     }
     .navbar a {
         color:black;
@@ -682,13 +809,14 @@ margin-right: 0px;
     justify-content: center; 
     align-items: center;  */
     padding: 1rem;
-    width: 35%; /* Ajuster la largeur automatiquement */
+    width: 20%; /* Ajuster la largeur automatiquement */
     height: 50px; /* Hauteur fixe pour le bouton */
     background-color: rgb(20, 111, 163); /* Couleur de fond (LinkedIn blue) */
     border-radius: 23px; /* Arrondir les coins pour créer un ovale */
     color: white; /* Couleur du texte */
     text-decoration: none; /* Supprimer la décoration de texte */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Transition pour l'effet de survol */
+
 }
 .content-social{
     display: flex;
@@ -700,6 +828,11 @@ margin-right: 0px;
 .social-links:hover {
     background-color: #1e4f6b; /* Couleur de fond au survol */
     transform: scale(1.05); /* Agrandir légèrement au survol */
+}
+}
+@media (max-width: 680px){
+.social-links{
+    width:33%;
 }
 }
 
@@ -717,6 +850,134 @@ margin-right: 0px;
     color:white;
     font-size: 15px;
     font-weight: bold;
+}
+
+.google-business-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px; /* Icon size */
+    height: 44px; /* Icon size */
+    background-color: white;
+    border-radius: 50%; /* Circular shape */
+    text-decoration: none;
+    position: absolute; /* Changed for specific positioning */
+    bottom: 0.8rem;     /* Position at the bottom of footer, respecting padding */
+    left: 0.8rem;      /* Position at the left of footer, respecting padding */
+    transition: background-color 0.3s ease;
+}
+
+.google-business-link .google-logo-char {
+    color: rgb(128, 128, 128);
+    font-size: 22px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.google-business-link:hover {
+    background-color: red;
+}
+
+.google-business-link:hover .google-logo-char {
+    color: white;
+}
+
+.tooltip-gmb {
+    visibility: hidden;
+    opacity: 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 115%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap; /* Prevent tooltip text from wrapping */
+    font-size: 12px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.google-business-link:hover .tooltip-gmb {
+    visibility: visible;
+    opacity: 1;
+}
+.svg-container svg {
+    width: 2em;
+    height: 2em;
+    margin: 0 auto;
+    margin-bottom: 20px ;
+}
+   .contact-methods {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.contact-method {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.contact-link {
+    color: #f0bd3b !important;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    color: white !important;
+    text-decoration: underline;
+}
+
+/* Separator style */
+.contact-separator {
+    width: 80%;
+    height: 1px;
+    background-color: rgba(240, 189, 59, 0.4);
+    margin: 5px auto 12px auto;
+}
+
+.availability {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-style: italic;
+    color: #f0f0f0;
+    font-size: 0.9em;
+    padding-top: 5px;
+}
+
+/* Media query for responsive contact methods */
+@media (max-width: 768px) {
+    .contact-methods {
+        gap: 10px;
+    }
+   
+   
+   
+   .contact-method {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-link {
+        font-size: 0.9em;
+    }
+
+    .availability {
+        font-size: 0.8em;
+    }
 }
 
     @media screen and (min-width: 681px) and (max-width: 1000px) {
@@ -738,6 +999,7 @@ margin-right: 0px;
     .icon{
         color:rgb(20, 111, 163);
     }
+    
 
 }
 
@@ -749,6 +1011,34 @@ margin-right: 0px;
 	/* -webkit-animation: .75s 0.75s animation-slider-title ease-out forwards;
 	animation: .75s 0.75s animation-slider-title ease-out forwards; */
 
+
+    /* Ligne séparatrice entre les sections - esthétique améliorée */
+.section-separator {
+    border: none;
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #f0bd3b 10%, #fffbe6 50%, #f0bd3b 90%);
+    border-image-slice: 1;
+    margin: 20px auto 20px auto;
+    width: 295px;
+    max-width: 60vw;
+    border-radius: 3px;
+    opacity: 0.85;
+    box-shadow: 0 2px 8px 0 rgba(240,189,59,0.10);
+    transition: box-shadow 0.3s;
+}
+.section-separator:hover {
+    box-shadow: 0 4px 16px 0 rgba(240,189,59,0.18);
+}
+
+.subfooter-credits-webdirectories a img{
+    background-color:white;
+    border-radius: 2px;
+    
+    
+    /* make it smaller 0.2 smaller */
+
+    
+}
 
     </style>
 </head>
@@ -769,23 +1059,102 @@ margin-right: 0px;
     
     </header>
     <div class="image-container">
-				<img class="headerPicture" alt="Alicia Ducatillon" src="https://celiabenoist.fr/wp-content/uploads/2022/05/P1066207-scaled.jpg">
+				<img class="headerPicture" alt="Alicia Ducatillon" src="images/header.webp">
 				<div class="headerText">
                     <h2>Alicia DUCATILLON</h2>
-                    <h3>Psychologue - Secteur Cluses en Haute Savoie</h3>
+                    <h3>Psychologue - Secteur Douaisis à Sin-Le-Noble</h3>
                     <h3> N° Adeli : 749314886</h3>
                     <a href="#cabinet">PRENDRE RENDEZ VOUS</a>
 			</div>
         </div>
     </div>
-    <section id="cabinet" class="content">
-        <h2>Le cabinet</h2>
-        <div  class="public-container">
-            <p><i class="fas fa-phone-alt"></i><br><strong>Contact </strong><br><a href="tel:07669907561"> 07 69 90 75 61</a><br><i class="far fa-envelope"></i> <a href="mailto:psychologue.alicia.ducatillon@gmail.com">psychologue.alicia.ducatillon@gmail.com</a></p>
-            <p><i class="fas fa-map-marker-alt"></i> <br><strong>Cabinet Pluridisciplinaire "les îles" </strong><br>8 Rue Sommeiller<br>74300 Cluses</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11073.145620377089!2d6.5623207!3d46.0653301!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c076c921dee89%3A0x7b1ef091a237f1ec!2sPsychologue%20Alicia%20Ducatillon!5e0!3m2!1sfr!2sfr!4v1695646135201!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" width="500" height="350"></iframe>
-            <p> Vous pouvez vous stationner sur le parking du stade intercommunal, le cabinet se situe à 30 mètres à pied.</p>
+    <!-- Ligne séparatrice après l'image d'en-tête -->
+    
+
+      <section id="cabinet" class="content">
+        <h2>Votre cabinet de psychologie à Sin-Le-Noble</h2>
+        <div class="cabinet-squares-container">
+            <div class="cabinet-square gruson-square">
+                <!-- <i class="fas fa-brain"></i> Optional Icon -->
+                 <span class="svg-container">
+                    <svg style="fill: #f0bd3b;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"><path d="M192 1664h288v-288h-288v288zm352 0h320v-288h-320v288zm-352-352h288v-320h-288v320zm352 0h320v-320h-320v320zm-352-384h288v-288h-288v288zm736 736h320v-288h-320v288zm-384-736h320v-288h-320v288zm768 736h288v-288h-288v288zm-384-352h320v-320h-320v320zm-352-864v-288q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v288q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zm736 864h288v-320h-288v320zm-384-384h320v-288h-320v288zm384 0h288v-288h-288v288zm32-480v-288q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v288q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zm384-64v1280q0 52-38 90t-90 38h-1408q-52 0-90-38t-38-90v-1280q0-52 38-90t90-38h128v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h384v-96q0-66 47-113t113-47h64q66 0 113 47t47 113v96h128q52 0 90 38t38 90z"></path></svg>
+                </span>
+                <h4>Prendre rendez-vous</h4>
+                <div class="contact-methods">
+                    <!-- Phone contact with improved styling -->
+                    <div class="contact-method">
+                        <i class="fas fa-phone-alt" style="color: #f0bd3b; margin-right: 8px;"></i>
+                        <div>
+                            <strong>Par téléphone</strong><br>
+                            <a href="tel:07669907561" class="contact-link">07 69 90 75 61</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Email contact with improved styling -->
+                    <div class="contact-method">
+                        <i class="far fa-envelope" style="color: #f0bd3b; margin-right: 8px;"></i>
+                        <div>
+                            <strong>Par email</strong><br>
+                            <a href="mailto:psychologue.alicia.ducatillon@gmail.com" class="contact-link">psychologue.alicia.ducatillon@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Separator bar -->
+                    <div class="contact-separator"></div>
+                    
+                    <!-- Availability information -->
+                    <div class="availability">
+                        <i class="far fa-clock" style="color: #f0bd3b; margin-right: 8px;"></i>
+                        <span>Disponible le Vendredi de 10h à 20h</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cabinet-square gruson-square">
+                <!-- <i class="fas fa-concierge-bell"></i> Optional Icon -->
+                 <span class="svg-container"><svg style="fill: #f0bd3b;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"><path d="M1152 640q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zm256 0q0 109-33 179l-364 774q-16 33-47.5 52t-67.5 19-67.5-19-46.5-52l-365-774q-33-70-33-179 0-212 150-362t362-150 362 150 150 362z"></path></svg></span>
+                <h4>Accéder au cabinet</h4>
+                <p>
+                    <a href="https://espacesanthea.fr/sin-le-noble/" target="_blank" rel="noopener" class="cabinet-link" style="position:relative;">
+                        Espace Santé Santhéa
+                        <span class="external-link-icon">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        </span>
+                        <span class="cabinet-tooltip" style="visibility:hidden;opacity:0;position:absolute;bottom:120%;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:5px 10px;border-radius:4px;font-size:12px;white-space:nowrap;transition:opacity 0.2s;">
+                            Ouvrir le site dans un nouvel onglet
+                        </span>
+                    </a>
+                </p>
+                <script>
+                document.querySelectorAll('.cabinet-link').forEach(function(link) {
+                    link.addEventListener('mouseenter', function() {
+                        var tooltip = link.querySelector('.cabinet-tooltip');
+                        if (tooltip) {
+                            tooltip.style.visibility = 'visible';
+                            tooltip.style.opacity = '1';
+                        }
+                    });
+                    link.addEventListener('mouseleave', function() {
+                        var tooltip = link.querySelector('.cabinet-tooltip');
+                        if (tooltip) {
+                            tooltip.style.visibility = 'hidden';
+                            tooltip.style.opacity = '0';
+                        }
+                    });
+                });
+                </script>
+                <p>632 Square Jacques Prévert</p>
+                <p>Sin-Le-Noble 59450 </p>
+            </div>
+            
+            <div class="cabinet-square gruson-square">
+                <h4>Localisation du cabinet</h4>
+                <!-- <i class="fas fa-phone-volume"></i> Optional Icon -->
+               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11073.145620377089!2d6.5623207!3d46.0653301!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c076c921dee89%3A0x7b1ef091a237f1ec!2sPsychologue%20Alicia%20Ducatillon!5e0!3m2!1sfr!2sfr!4v1695646135201!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" width="300" height="350"></iframe>
+           
+            </div>
         </div>
+   
         <div class="public-container2">
                 <p class="has-text-align-center has-normal-font-size"><i class="fas fa-child"></i><br>Enfants</p>
                 <p class="has-text-align-center has-normal-font-size"><i class="fas fa-user-graduate"></i><br>Adolescents / Etudiants</p>
@@ -793,27 +1162,18 @@ margin-right: 0px;
         </div>
         <div class ="flexbox" >
         <div id="text-animation"></div>
-            <p id="start">Les motivations qui peuvent nous conduire à consulter un psychologue sont variées : estime de
-                soi, événements difficiles, questionnements, sentiment d'épuisement, et bien d'autres encore.
-                Cependant, c'est le désir de se sentir mieux qui pousse à franchir la porte de mon cabinet. C'est
-                avec bienveillance que je vous accueillerai sur rendez-vous, dans le but de vous accompagner
-                vers une meilleure connaissance de vous-même, et d'explorer ensemble des solutions et des
-                ressources pour redonner du sens à votre vie.</br></br>
-                Dans cette optique, mes séances s'adapteront à vos besoins. Si vous ressentez le besoin de
-                parler, je serai à l'écoute - soyez assuré(e), mes "grandes oreilles" sont là pour vous. Si, au
-                contraire, vous appréhendez de ne pas savoir quoi exprimer, nous pourrons utiliser des outils
-                pratiques et des supports adaptés pour vous guider. Enfin, si vous préférez ne pas tout dévoiler
-                dès le début, aucun souci, aucune précipitation. Dans tous les cas, nous progresserons à votre
-                rythme.</p>
+            <p id="start">Les raisons qui nous amènent à consulter un psychologue sont multiples : une baisse d’estime de soi, des événements bouleversants, des questionnements profonds, un sentiment d’épuisement… ou simplement le besoin de retrouver un équilibre intérieur. Mais au fond, c’est souvent le désir sincère de se sentir mieux qui nous pousse à franchir le pas.
+<br>
+<br>
+Je vous accueillerai avec bienveillance, dans un cadre confidentiel et respectueux, pour vous accompagner vers une meilleure compréhension de vous-même. Ensemble, nous explorerons les chemins possibles pour redonner du sens à ce que vous vivez, et mettre en lumière les ressources qui sommeillent en vous.
+<br><br>
+Je suis là pour vous aider à trouver votre propre voie, à votre rythme.
+Chaque séance sera pensée pour répondre à vos besoins du moment. Si vous ressentez le besoin de parler, je serai pleinement à l’écoute. Si, au contraire, les mots vous manquent ou semblent difficiles à poser, nous pourrons nous appuyer sur des outils concrets, simples et adaptés pour faciliter l’expression. Et si vous préférez avancer pas à pas, en douceur, sans tout dévoiler d’emblée, cela sera parfaitement respecté.
+
+Dans tous les cas, le rythme sera le vôtre. Mon rôle est de vous accompagner avec sensibilité et justesse, là où vous en êtes, là où vous souhaitez aller.</p>
         </div>
         <div id="google-map"></div>
-        <!-- <div class="galerie-container">
-            <img src="images/IMG_1668.jpg" alt="Image 1">
-            <img src="images/IMG_1669.jpg" alt="Image 3">
-            <img src="images/IMG_1670.jpg" alt="Image 2">
-            
-        </div> -->
-
+    
         <div id="carousel" class="carousel-container">
             <div class="aspect-16-9">
                 <div class="carousel-track"></div>
@@ -827,46 +1187,47 @@ margin-right: 0px;
 
     </section>
 
-    <section id="seances" class="content">
+    <!-- Ligne séparatrice après la section cabinet -->
+    <hr class="section-separator">
+
+     <section id="seances" class="content">
         <h2>Les séances</h2>
-        <p>Les séances se présentent comme des instants privilégiés d'écoute et de dialogue, se déroulant
-            sans rythme imposé. Elles offrent l'opportunité d'approfondir sa connaissance de soi-même et de
-            prendre du recul par rapport à son vécu, dans le but de dégager des solutions optimales. 
-            <br>En ce qui concerne les consultations, elles peuvent avoir lieu en présentiel ou en visioconférence au créneau suivant :</p>
+        <p>Les séances sont des parenthèses précieuses, consacrées à l’écoute, au dialogue et à la réflexion, sans contrainte de rythme ni pression. Elles permettent d’explorer en profondeur la connaissance de soi, de prendre du recul sur son parcours et d’ouvrir des perspectives nouvelles, en vue de trouver des réponses adaptées à ses besoins.
+
+
+<br>
+            <br>En ce qui concerne les consultations, elles peuvent avoir lieu en <strong>présentiel</strong> ou en <strong>visioconférence</strong> au créneau suivant :</p>
             <ul>
-                <li>Vendredi : 10h00 à 19h00 </li>
+                <li>Vendredi : 10h00 à 20h00 </li>
             </ul>
             <p>La durée d'une séance est de 45 à 60 minutes.</p>
     </section>
 
+    <!-- Ligne séparatrice après la section séances -->
+    <hr class="section-separator">
 
-
-
-
-
-
-    <section id="quisuisje" class="content">
+   <section id="quisuisje" class="content">
         <h2>Qui suis-je ?</h2>
         <div class="profilsect">
         <img id ='profil' src="images/IMG_9822.jpg" alt="profil" class="cercle-image" >
         </div>
             
-        <div id="univ2" style="display:flex">
+        <div id="univ2" style="display:flex; align-items:center; gap:10 px;">
         
-        <p>Après une licence à l’Université de Lille, j’ai suivi le master DEHIS – développement éducation
-            handicap individu et société à l’université de Lille qui me permet de faire usage du titre de
-            psychologue clinicienne. Cela m’a formé à une pratique générale allant de la petite enfance à
-            l’âge avancé, avec une spécialisation dans la mise en place d’interventions individuelles et
-            collectives.</p>
-            <img id="univ"src="images/logo2.png" alt="logo">
+        <p>Après une licence en psychologie à l’Université de Lille, j’ai poursuivi mes études au sein du master DEHIS – Développement, Éducation, Handicap, Individu et Société, également à l’Université de Lille. 
+            Ce parcours m’a permis d’obtenir le titre de psychologue clinicienne.</p>
+        <img id="univ"src="images/logo2.png" alt="logo">
         </div>
-        <p>Mon parcours s'est épanoui à travers une pratique polyvalente au sein de diverses structures et
-            auprès de publics variés. Cette expérience m'a offert l'opportunité d'être en interaction avec : </p>
+        <p> Ma formation m’a préparée à une pratique polyvalente, auprès de personnes de tous âges; de la petite enfance jusqu’au grand âge avec une spécialisation dans la conception et la mise en œuvre d’interventions à la fois individuelles et collectives.</p>
+        <p>Mon parcours s’est enrichi au fil d’expériences diversifiées, au sein de structures variées et auprès de publics aux besoins singuliers. 
+            Cette pratique polyvalente m’a permis d’intervenir auprès de : </p>
         <ul>
 
-            <li>des entants dans le contexte d’un séjour de leur proche en service de réanimation</li>
-            <li>d’adultes à la maison des aidants</li>
-            <li>des personnes âgées résidentes en EHPAD</li>
+            <li><strong>Jeunes enfants</strong>, dans le contexte sensible de l’hospitalisation d’un proche en service de réanimation</li>
+            <li><strong>Adultes aidants</strong>, accompagnés au sein de la Maison des Aidants</li>
+            <li><strong>Personnes âgées</strong>, résidentes en EHPAD, dans une approche attentive à l’accompagnement du vieillissement et de la fin de vie
+
+</li>
 
 
         </ul>
@@ -874,29 +1235,29 @@ margin-right: 0px;
     </section>
 
 
+    <!-- Ligne séparatrice après la section qui suis-je -->
+    <hr class="section-separator">
 
-
-
-
-    <section id="mapratique" class="content">
+   <section id="mapratique" class="content">
         <h2>Ma pratique</h2>
-        <p>Ce parcours diversifié me permet de me présenter comme une boîte à outils dédiée à mes
-            patients. Mon approche thérapeutique se veut résolument intégrative. J'associe différentes
-            méthodes afin de m'adapter au mieux à chaque situation : Les thérapies cognitivo-
-            comportementales (TCC), la psychoéducation, la thérapie ACT (acceptation et engagement), les
-            approches centrées sur les émotions, les thérapies systémiques ainsi que la psychologie positive.</p>
+        <p>Grâce à mon parcours varié, j’ai pu développer une approche souple et adaptée,
+             un peu comme une boîte à outils que je mets au service de chaque personne que j’accompagne.</p>
         <p>
-            Je m'engage résolument à poursuivre ma formation de manière continue, en explorant divers
-domaines tels que les troubles du développement neurologique, les traumatismes
-psychologiques, la gestion du stress et des phobies, les dépendances, l'épuisement
-professionnel, ainsi que l'accompagnement parental, parmi d'autres sujets pertinents.
+            Mon approche est dite intégrative : cela signifie que j’utilise différentes méthodes en fonction des besoins de chacun. 
+            Parmi celles-ci, on retrouve les thérapies cognitivo-comportementales (TCC), la psychoéducation, les approches centrées sur les émotions, ainsi que les outils issus de la psychologie positive.
+        </p>
+        <p>
+            Je continue de me former régulièrement pour enrichir ma pratique et rester à jour. 
+            Je m’intéresse notamment aux troubles du développement, aux traumatismes, à la gestion du stress, aux phobies, ainsi qu’à l’épuisement professionnel.
 
-
-            </p>
+        </p>
    
         </section>
 
-    <section id="honoraire" class="content">
+    <!-- Ligne séparatrice après la section ma pratique -->
+    <hr class="section-separator">
+
+  <section id="honoraire" class="content">
         <h2>Honoraires</h2>
         <p>Les tarifs pour les consultations sont les suivants:</p>
         <ul>
@@ -904,26 +1265,20 @@ professionnel, ainsi que l'accompagnement parental, parmi d'autres sujets pertin
             <li>Première consultation de couple ou de famille (1h30) : 123€</li>
             <li>Consultation de suivi pour couple ou famille : 82€</li>
         </ul>
-        <p> J'accepte uniquement les paiements par <strong>chèque </strong> ou <strong>espèces</strong>. </p>
-    <p>Je suis psychologue non conventionnée, ce qui signifie que vous n'avez pas besoin d'une
-        prescription médicale pour prendre rendez-vous. Veuillez noter que mes services ne sont pas
-        couverts par la sécurité sociale et ne sont pas remboursables.</p>
+        <p> Les règlements peuvent s'effectuer  par <strong>chèque </strong> ou <strong>espèces</strong> uniquement. </p>
+    <p>Je suis psychologue <strong>non conventionnée</strong>, ce qui signifie qu’aucune prescription médicale n’est nécessaire pour prendre rendez-vous. 
+        En revanche, mes consultations ne sont pas remboursées par la Sécurité sociale.</p>
     <p>
-    Cependant, je vous encourage à vous informer auprès de votre mutuelle, car je peux vous fournir
-    une attestation de suivi qui pourrait vous permettre de bénéficier d'un remboursement de votre
-    mutuelle si elle prend en charge les soins psychiques.   
+    Selon votre contrat, certaines mutuelles peuvent proposer un remboursement partiel des séances. 
+    Dans ce cas, je peux vous fournir une attestation de suivi à transmettre à votre organisme.
     </p>
-    <p>Veuillez noter que je ne participe pas au dispositif "monpsysante" et n'accepte pas les
-        ordonnances médicales comme moyen de référence pour les consultations.
+    <p>À noter : je ne suis pas affiliée au dispositif “MonPsySanté” et je n’accepte pas les ordonnances médicales comme base de consultation.
     </p>
     
     
     
     </section>
     
-
-
-
 
 
     <button id="scrollToTopButton" onclick="scrollToTop()" class="scroll-to-top-button">
@@ -937,6 +1292,22 @@ professionnel, ainsi que l'accompagnement parental, parmi d'autres sujets pertin
 
     <script src="https://cdn.jsdelivr.net/npm/vara@1.4.0/lib/vara.min.js" type="text/javascript"></script>
     <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const squares = document.querySelectorAll('.gruson-square');
+        function animateSquares() {
+            squares.forEach(square => {
+                const rect = square.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    square.classList.add('animated');
+                }
+            });
+        }
+    window.addEventListener('scroll', animateSquares);
+    animateSquares();       
+    });
+
+
     const navItems = document.querySelectorAll('li a');
 
 // Parcourez chaque élément de navigation et ajoutez un écouteur d'événements
@@ -1052,7 +1423,17 @@ vara.ready(function(){
             <span id="linkedin"> Alicia Ducatillon</span>
         </div>
     </a>
-    <p>Secteur d'intervention <i class="fas fa-map-marker-alt"></i> Cluses | Thyez | Scionzier | Marnaz | Marignier | Nancy-sur-Cluses | Magland | Châtillon-sur-Cluses</p>
+    <a href="https://g.co/kgs/VcdNZkP" target="_blank" class="google-business-link">
+        <span class="google-logo-char">G</span>
+        <span class="tooltip-gmb">Google MyBusiness</span>
+    </a>
+    <p>Secteur d'intervention <i class="fas fa-map-marker-alt"></i> Waziers | Douai | Lambres-Lez-Douai | Lallaing | Cuincy | Dechy | Flers-en-Escrebieux | Courchelettes | Cantin | Arleux</p>
+    <span class="subfooter-credits-webdirectories" style="display: flex; align-items: center; gap: 10px;">
+        <span>Site référencé sur </span>
+        <a title="Alicia DUCATILLON sur Bonjour Psychologue" class="logo-web-directory" target="_blank" href="https://www.bonjour-psychologue.fr/psychologue/haute-savoie/cluses-74300/alicia-ducatillon">
+            <img src="https://files.sbcdnsb.com/images/webdirectory/1719997257/10/logo/logos_bonjour-2024_plan_de_travail_1_copie_3.png" data-src="https://files.sbcdnsb.com/images/webdirectory/1719997257/10/logo/logos_bonjour-2024_plan_de_travail_1_copie_3.png" alt="Bonjour Psychologue" height="30" width="60" data-ll-status="loaded" class="entered loaded">
+        </a>
+    </span>
     <p>Tous droits réservés &copy; 2023 Alicia Ducatillon - Psychologue </p>
 </footer>
 </body>
