@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- Page principale -->
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Sections de la page principale -->
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/#cabinet</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/#seances</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/#quisuisje</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/#mapratique</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/#honoraire</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Pages villes proches -->
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/psychologue-douai-59500/</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/psychologue-lambres-lez-douai-59552</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/psychologue-lallaing-59167</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/psychologue-flers-en-escrebieux-59128</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/psychologue-cuincy-59553</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/psychologue-aniche-59580</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/psychologue-dechy-59187</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/psychologue-denain-59220</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/psychologue-esquerchin-59553</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/psychologue-courchelettes-59552</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/psychologue-cantin-59169</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/psychologue-arleux-59151</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Plan du site -->
+    <url>
+        <loc>https://alicia-ducatillon-psychologue.com/plan_site.html</loc>
+        <lastmod>2025-07-08</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+</urlset>
