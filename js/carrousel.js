@@ -7,17 +7,17 @@ class Carousel {
       console.log('Carousel initialized');
       this.images = [
           {
-              url: "/images/IMG_2190.jpg",
+              url: "/images/entrée.webp",
               alt: "Salle de consultation",
               caption: "Un environnement propice à l'échange"
           },
+          // {
+          //     url: "/images/IMG_2193.jpg",
+          //     alt: "Salle de consultation",
+          //     caption: "Un cadre serein et professionnel"
+          // },
           {
-              url: "/images/IMG_2193.jpg",
-              alt: "Salle de consultation",
-              caption: "Un cadre serein et professionnel"
-          },
-          {
-            url: "/images/IMG_1669.jpg",
+            url: "/images/espace_attente.webp",
             alt: "Espace d'attente",
             caption: "L'espace d'attente"
         }
