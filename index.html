@@ -935,7 +935,7 @@ margin-right: 0px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
+    gap: 5px;
     width: 100%;
     margin-top: 10px;
 }
@@ -979,6 +979,7 @@ margin-right: 0px;
     padding-top: 5px;
 }
 
+
 /* Media query for responsive contact methods */
 @media (max-width: 768px) {
     .contact-methods {
@@ -988,8 +989,8 @@ margin-right: 0px;
    
    
    .contact-method {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
     }
 
     .contact-link {
@@ -1084,8 +1085,11 @@ margin-right: 0px;
 				<div class="headerText">
                     <h2>Alicia DUCATILLON</h2>
                     <h3>Psychologue - Secteur Douaisis à Sin-Le-Noble</h3>
-                    <h3> N° Adeli : 749314886</h3>
-                    <a href="#cabinet">PRENDRE RENDEZ VOUS</a>
+                    <h3> N° RPPS : 10008640715</h3>
+                    <a href="https://www.doctolib.fr/psychologue/sin-le-noble/alicia-ducatillon/booking?bookingFunnelSource=profile" style="align-items: center; gap: 8px;">
+        <img src="images/doctolib.png" alt="Doctolib" style="height: 22px; width: auto; vertical-align: middle; margin-right: 6px;">
+        PRENDRE RENDEZ VOUS
+    </a>
 			</div>
         </div>
     </div>
@@ -1102,8 +1106,18 @@ margin-right: 0px;
                 </span>
                 <h4>Prendre rendez-vous</h4>
                 <div class="contact-methods">
-                    <!-- Phone contact with improved styling -->
+                    <!-- Prendre rendez-vous via Doctolib -->
                     <div class="contact-method">
+                        <img src="images/doctolib.png" alt="Doctolib" style="height:22px;width:auto;margin-left: -8px;">
+                        <div>
+                            <strong>Sur Doctolib</strong><br>
+                            <a href="https://www.doctolib.fr/psychologue/sin-le-noble/alicia-ducatillon/booking?bookingFunnelSource=profile" class="contact-link" target="_blank" rel="noopener">
+                                Prendre rendez-vous en ligne
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Phone contact with improved styling -->
+                     <div class="contact-method">
                         <i class="fas fa-phone-alt" style="color: #146fa3; margin-right: 8px;"></i>
                         <div>
                             <strong>Par téléphone</strong><br>
